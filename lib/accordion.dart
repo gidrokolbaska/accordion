@@ -135,12 +135,10 @@ class Accordion extends StatelessWidget with CommonParams {
 
   @override
   build(context) {
-    final listCtrl = Get.put(ListController(), tag: hashCode.toString());
-
     return ListView.builder(
       itemCount: children.length,
       controller: listCtrl.controller,
-      shrinkWrap: true,
+      shrinkWrap: false,
       physics: disableScrolling
           ? const NeverScrollableScrollPhysics()
           : const AlwaysScrollableScrollPhysics(),
