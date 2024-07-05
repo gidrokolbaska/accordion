@@ -48,7 +48,6 @@ class Accordion extends StatelessWidget with CommonParams {
   final bool? flipRightIconIfOpen;
   static bool sectionAnimation = true;
   static bool sectionScaleAnimation = true;
-  final listCtrl = Get.put(ListController());
 
   Accordion({
     Key? key,
@@ -135,6 +134,7 @@ class Accordion extends StatelessWidget with CommonParams {
 
   @override
   build(context) {
+    final listCtrl = Get.put(ListController(), tag: hashCode.toString());
     return ListView.builder(
       itemCount: children.length,
       controller: listCtrl.controller,
